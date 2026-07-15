@@ -7,8 +7,7 @@ class ChatService {
   // عنوان الخادم الوسيط (غيّر localhost إلى IP جهازك إذا كنت تشغّل على هاتف حقيقي)
   ///static const String baseProxyUrl = "http://127.0.0.1:5000/api/chat";
   // static const String baseProxyUrl = "http://127.0.0.1:5000/api/chat";
-static const String baseProxyUrl = "http://192.168.134.242/api/chat"; // ضع IP جهازك هنا
-
+static const String baseProxyUrl = "https://23b4-154-134-129-29.ngrok-free.app/api/chat";
   /// إرسال رسالة المستخدم والحصول على رد النموذج المختار
   /// [model] : اسم النموذج (deepseek, gemma, nemotron)
   /// [userMessage] : نص رسالة المستخدم الحالية
