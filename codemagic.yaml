@@ -9,7 +9,7 @@ workflows:
       vars:
         # ⚠️ لن نضع الرابط هنا، بل سنقرأه من متغيرات البيئة الآمنة في Codemagic
         # (ستضبطه يدوياً في واجهة Codemagic)
-        API_BASE_URL: ""
+        API_BASE_URL: "https://dummy.ngrok-free.app"
     scripts:
       - name: تنظيف المشروع
         script: flutter clean
