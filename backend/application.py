@@ -3,8 +3,8 @@ from flask_cors import CORS  # نضيف هذه المكتبة لحل CORS نها
 from openai import OpenAI
 import json
 
-app = Flask(__name__)
-CORS(app)  # يسمح لأي تطبيق Flutter بالاتصال بهذا الخادم دون مشاكل
+application = Flask(__name__)
+CORS(application)  # يسمح لأي تطبيق Flutter بالاتصال بهذا الخادم دون مشاكل
 
 # تعريف النماذج والمفاتيح الخاصة بها (ضع مفاتيحك الحقيقية هنا)
 MODELS_CONFIG = {
@@ -39,7 +39,7 @@ SUPPORTED CAR BRANDS: Hyundai, Kia, Toyota, Nissan, Chevrolet, Mitsubishi, Honda
 
 ALLOWED ON-SITE SERVICES: Changing brake pads, changing brake discs, changing brake fluid, bleeding the brake system, changing engine oil/filter, changing air/fuel/AC filters, changing spark plugs/coils/injectors, cleaning/changing throttle body, changing serpentine belt/tensioner/pulleys, fixing minor water/oil/fuel leaks, changing gaskets (valve cover, oil pan), changing transmission/power fluid, securing exhaust/rubber hangers."""
 
-@app.route('/api/chat', methods=['POST'])
+@application.route('/api/chat', methods=['POST'])
 def chat():
     try:
         data = request.json
@@ -80,4 +80,4 @@ def chat():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    application.run(host='0.0.0.0', port=5000, debug=True)

@@ -8,7 +8,8 @@ class ChatService {
   ///static const String baseProxyUrl = "http://127.0.0.1:5000/api/chat";
   // static const String baseProxyUrl = "http://127.0.0.1:5000/api/chat";
 static String get baseProxyUrl {
-  const String apiUrl = String.fromEnvironment('API_BASE_URL', defaultValue: 'http://127.0.0.1:5000');
+  // قمنا بتغيير العنوان الافتراضي هنا ليكون عنوان سيرفر AWS الخاص بك مباشرة
+  const String apiUrl = String.fromEnvironment('API_BASE_URL', defaultValue: 'http://16.171.100.46:5000');
   return '$apiUrl/api/chat';
 }
   /// إرسال رسالة المستخدم والحصول على رد النموذج المختار
