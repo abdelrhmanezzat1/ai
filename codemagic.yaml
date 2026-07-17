@@ -17,16 +17,16 @@ workflows:
         script: flutter pub get
       - name: بناء التطبيق (IPA)
         script: |
-          # نقوم بتمرير الرابط العام إلى الكود أثناء البناء
-          flutter build ipa --release \
+          # بناء التطبيق للمحاكي وتخطي التوقيع الرقمي لتفادي الأخطاء
+          flutter build ios --no-codesign --simulator \
             --dart-define=API_BASE_URL=$API_BASE_URL \
             --obfuscate \
             --split-debug-info=build/debug-info
     artifacts:
-      # تحديد مكان ملف الـ IPA الناتج
-      - build/ios/ipa/*.ipa
+      # تحديد مجلد التطبيق الناتج ليكون جاهزاً للتحميل مباشرة من منصة Codemagic
+      - build/ios/iphonesimulator/*.app
     publishing:
       # إشعار عبر البريد الإلكتروني بنتيجة البناء
       email:
         recipients:
-          - abdelrahmansoliman101@gmail.com  # ⚠️ غيّر هذا إلى بريدك الإلكتروني
+          - abdelrahmansoliman101@gmail.com
